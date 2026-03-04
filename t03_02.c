@@ -16,9 +16,11 @@ int main() {
     // Membaca nilai 'n' dari input
     scanf("%d", &n);
 
-    // Validasi dasar untuk 'n'. 'n' harus positif.
+    // Validasi dasar untuk 'n'. 'n' harus bilangan bulat positif untuk memproses data.
     if (n <= 0) {
         printf("Input 'n' harus bilangan bulat positif.\n");
+        // Jika n tidak valid, kita tidak bisa menghitung min/max/avg, jadi kita keluar.
+        // Output untuk kasus ini: hanya pesan error, tidak ada min/max/avg.
         return 1; // Mengakhiri program dengan kode error
     }
 
@@ -36,7 +38,7 @@ int main() {
             max_val = num;
         }
 
-        // Jika ini bukan bilangan pertama (sudah ada prev_num), kita bisa menghitung rata-rata pasangan
+        // Jika ini bukan bilangan pertama (i > 0), kita bisa menghitung rata-rata pasangan
         if (i > 0) {
             // Hitung rata-rata dari bilangan sebelumnya (prev_num) dan bilangan saat ini (num)
             // Penting: gunakan (double) untuk memastikan perhitungan floating point
@@ -54,15 +56,15 @@ int main() {
     }
 
     // Mencetak output sesuai format dan urutan yang diminta
-    printf("Nilai terkecil: %d\n", min_val);
-    printf("Nilai terbesar: %d\n", max_val);
+    printf("%d\n", min_val);
+    printf("%d\n", max_val);
 
     // Mencetak rata-rata terendah. Hanya jika ada setidaknya satu pasangan yang dihitung.
     if (has_pair) {
-        printf("Rata-rata terendah: %.2f\n", min_avg);
+        printf("%.2f\n", min_avg);
     } else {
         // Jika tidak ada pasangan (yaitu, n < 2), tampilkan N/A
-        printf("Rata-rata terendah: N/A\n");
+        printf("N/A\n");
     }
 
     return 0; // Mengakhiri program dengan sukses

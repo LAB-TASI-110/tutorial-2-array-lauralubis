@@ -62,17 +62,17 @@ int main() {
     }
 
     // Mencetak output sesuai format dan urutan yang diminta
-    printf("Nilai terkecil: %d\n", min_val);
-    printf("Nilai terbesar: %d\n", max_val);
+    printf("%d\n", min_val);
+    printf("%d\n", max_val);
 
     // Mencetak rata-rata terendah dan tertinggi. Hanya jika ada setidaknya satu pasangan yang dihitung.
     if (has_pair) {
-        printf("Rata-rata terendah: %.2f\n", min_avg);
-        printf("Rata-rata tertinggi: %.2f\n", max_avg);
+        printf("%.2f\n", min_avg);
+        printf("%.2f\n", max_avg);
     } else {
         // Jika tidak ada pasangan (yaitu, n < 2), tampilkan N/A
-        printf("Rata-rata terendah: N/A\n");
-        printf("Rata-rata tertinggi: N/A\n");
+        printf("N/A\n");
+        printf("N/A\n");
     }
 
     return 0; // Mengakhiri program dengan sukses
